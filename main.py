@@ -46,4 +46,34 @@ I_SHL1 = g_SHL1 * (m_SHL1)**3 * (0.7 * h_f_SHL1 + 0.3 * h_s_SHL1) * (V - V_K)
 
 
 
+# updated version
 
+V_0.5 = 11.2 * mV #potentially -6.8
+k_a = 14.1 * mV
+m_SHL1_inf = lambda V : (1)/(1-e^(-(V-V_0.5)/k_a))
+
+a =   13.8 * ms #potentially 1.4
+b = -17.5 * mV
+c = 12.9 * mV
+d = -3.7 * mV
+e = 6.5 * mV
+f = 1.9 * ms #potentially 0.2
+tau_m_SHL1 = lambda V: ((a)/((e^(-(V-b)/c)) + (e^(-(V-b)/e)))) + f
+
+V_0.5 = -33.1 * mV
+k_i = 8.3 * mV
+h_f_SHL1 = lambda V: (1)/(1+e^((V-V_0.5)/k_i))
+h_s_SHL1 = lambda V: (1)/(1+e^((V-V_0.5)/k_i))
+
+a = 539.2 * ms #potentially 53.9
+b = -28.2 * mV
+c = 4.9 mV
+d = 27.3 * ms #potentially 2.7
+tau_h_f_SHL1 = lambda V: ((a)/(1 + e^((V-b)/c))) + d
+
+a = 8422.0 * ms #potentially 842.2
+b = -37.7 * mV
+c = 6.4 * mV
+d = 118.9 * ms #potentially 11.9
+tau_h_s_SHL1 = lambda V: ((a)/(1 + e^((V-b)/c))) + d
+I_SHL1 = g_SHL1 * (m_SHL1)**3 * (0.7 * h_f_SHL1 + 0.3 * h_s_SHL1) * (V - V_K)

@@ -1,4 +1,5 @@
 from IonChannel import IonChannel
+from IonChannel import mV, ms
 import math
 import matplotlib.pyplot as plt
 import numpy as np
@@ -110,4 +111,5 @@ run_experiment(-80e-3, -20e-3)
 run_experiment(-80e-3, -30e-3)
 run_experiment(-80e-3, -40e-3)
 
+plt.savefig('SHL1.png')
 plt.show()

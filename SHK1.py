@@ -92,4 +92,5 @@ run_experiment(-80e-3, -20e-3)
 run_experiment(-80e-3, -30e-3)
 run_experiment(-80e-3, -40e-3)
 
+plt.savefig('SHK1.png')
 plt.show()
